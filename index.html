@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BlueMe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"></div>
+<nav><div class="brand">◆ BlueMe</div><div class="nav-right"><button id="shareProfile">↗</button><a href="admin.html">Admin</a></div></nav>
+<main>
+<section class="hero">
+  <div class="cover"><div><small>DIGITAL PROFILE</small><h2>Everything.<br>One place.</h2></div></div>
+  <div class="profile">
+    <div class="avatar">BC<span>✓</span></div>
+    <div class="identity"><h1>BLUE CREATOR</h1><p>@bluecreator</p></div>
+    <button class="follow">+ Follow</button>
+  </div>
+  <p class="bio">Creator • Video • Photo • Updates<br><span>Welcome to my digital universe.</span></p>
+  <div class="stats"><div><b id="postCount">0</b><span>Posts</span></div><div><b>12.8K</b><span>Followers</span></div><div><b>1.2M</b><span>Views</span></div></div>
+</section>
+
+<section class="links">
+  <a href="#"><span>▶</span>YouTube</a>
+  <a href="#"><span>♪</span>TikTok</a>
+  <a href="#"><span>◎</span>Instagram</a>
+  <a href="#"><span>✉</span>Contact</a>
+</section>
+
+<section class="head"><div><small>LATEST</small><h2>Creative Feed</h2></div><div class="tabs">
+<button class="tab active" data-filter="all">All</button>
+<button class="tab" data-filter="image">Photos</button>
+<button class="tab" data-filter="video">Videos</button>
+<button class="tab" data-filter="text">Notes</button>
+</div></section>
+
+<section id="feed" class="feed"><div class="empty">Memuat postingan...</div></section>
+</main>
+<div id="toast" class="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+window.BLUEME_CONFIG={url:"https://wwvozkuaiabghdtuyfmr.supabase.co",key:"sb_publishable_QKF-GlOTlYhRSac2bmJ9qA_gQ7x_-7H",bucket:"media"};
+window.BLUEME_ADMIN_PAGE=false;
+</script>
+<script src="app.js"></script>
+</body>
+</html>

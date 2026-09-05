@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BlueMe Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg"></div>
+<nav><div class="brand">◆ BlueMe Admin</div><div class="nav-right"><a href="index.html">Website</a><button id="logoutBtn" class="hidden">Logout</button></div></nav>
+<main class="admin-main">
+<section id="loginPanel" class="login panel">
+<small>OWNER ACCESS</small><h1>Admin Login</h1>
+<p>Masuk menggunakan akun yang sudah dibuat di Supabase Authentication.</p>
+<label>Email</label><input id="email" type="email" autocomplete="username" placeholder="Email admin">
+<label>Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Password admin">
+<button id="loginBtn" class="primary full">Masuk Admin</button>
+<div id="loginStatus" class="status"></div>
+</section>
+
+<section id="dashboard" class="hidden">
+<div class="dash panel"><div><small>CONTENT STUDIO</small><h1>Dashboard Admin</h1><p>Posting gambar, video, atau teks. Hanya admin yang bisa menggunakan halaman ini.</p></div><button id="openComposer" class="primary">+ Buat Postingan</button></div>
+<section class="head"><div><small>MANAGE</small><h2>Postingan</h2></div></section>
+<section id="feed" class="feed"><div class="empty">Memuat postingan...</div></section>
+</section>
+</main>
+
+<div id="composer" class="modal">
+<div class="backdrop" data-close></div>
+<div class="composer panel">
+<div class="composer-head"><div><small>NEW POST</small><h2>Buat Postingan</h2></div><button data-close class="x">×</button></div>
+<label>Judul</label><input id="postTitle" maxlength="120" placeholder="Judul postingan">
+<label>Caption</label><textarea id="postCaption" rows="5" placeholder="Tulis caption..."></textarea>
+<label>Media</label>
+<label class="upload" for="postMedia"><input id="postMedia" hidden type="file" accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm,video/quicktime"><b>↑ Pilih gambar atau video</b><small>Gambar maks. 5 MB • Video maks. 50 MB</small></label>
+<div id="preview" class="preview hidden"></div>
+<div id="uploadProgress" class="status"></div>
+<div class="actions"><button data-close>Batal</button><button id="publishBtn" class="primary">Publish</button></div>
+</div>
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+window.BLUEME_CONFIG={url:"https://wwvozkuaiabghdtuyfmr.supabase.co",key:"sb_publishable_QKF-GlOTlYhRSac2bmJ9qA_gQ7x_-7H",bucket:"media"};
+window.BLUEME_ADMIN_PAGE=true;
+</script>
+<script src="app.js"></script>
+</body>
+</html>
